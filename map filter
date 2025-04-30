@@ -1,2 +1,18 @@
  $names = array_map(fn($user) => $user['children'], $users);
 $filteredUsers = array_filter($users, fn($user) => $user['age'] > 10);
+
+mapping recusrive рекурсия отображения функция
+
+function flatten(array $array, int $depth = INF): array {
+    $result = [];
+
+    foreach ($array as $value) {
+        if (is_array($value) && $depth > 0) {
+            $result = array_merge($result, flatten($value, $depth - 1));
+        } else {
+            $result[] = $value;
+        }
+    }
+
+    return $result;
+}
