@@ -1,0 +1,2 @@
+ $names = array_map(fn($user) => $user['children'], $users);
+$filteredUsers = array_filter($users, fn($user) => $user['age'] > 10);
